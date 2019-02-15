@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBurger.Orders", "GeekBurger.Orders\GeekBurger.Orders.csproj", "{DE7D77A2-76F8-41A7-99CA-7673E8D72F98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBurger.Orders.Contract", "GeekBurger.Orders.Contract\GeekBurger.Orders.Contract.csproj", "{1911D5F6-504E-455D-BCD5-8AAE59F428D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE7D77A2-76F8-41A7-99CA-7673E8D72F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7D77A2-76F8-41A7-99CA-7673E8D72F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7D77A2-76F8-41A7-99CA-7673E8D72F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7D77A2-76F8-41A7-99CA-7673E8D72F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1911D5F6-504E-455D-BCD5-8AAE59F428D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1911D5F6-504E-455D-BCD5-8AAE59F428D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1911D5F6-504E-455D-BCD5-8AAE59F428D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1911D5F6-504E-455D-BCD5-8AAE59F428D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24A77742-0D96-4466-AE85-D941DE062D9E}
+	EndGlobalSection
+EndGlobal

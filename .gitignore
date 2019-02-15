@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/GeekBurger.Orders
+/GeekBurger.Orders/bin/Debug/netcoreapp2.1
+/GeekBurger.Orders/obj/Debug/netcoreapp2.1
+/GeekBurger.Orders.Contract/bin/Debug/netcoreapp2.1
+/GeekBurger.Orders.Contract/obj/Debug/netcoreapp2.1
+/GeekBurger.Orders.Contract/obj
+/GeekBurger.Orders/obj
