@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GeekBurger.Orders.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GeekBurger.Orders
@@ -17,6 +19,9 @@ namespace GeekBurger.Orders
         {
             var mvcCoreBuilder = services.AddMvcCore();
 
+            services.AddDbContext<OrdersContext>(x => x.UseInMemoryDatabase("geekburger-orders"));
+            services.AddScoped<IOrdersRepository, OrdersRepository>();
+
             mvcCoreBuilder
                 .AddFormatterMappings()
                 .AddJsonFormatters()
@@ -24,13 +29,14 @@ namespace GeekBurger.Orders
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, OrdersContext ordersContext)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            ordersContext.Seed();
             app.UseMvc(); ;
         }
     }
