@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using GeekBurger.Orders.Extensions;
 using GeekBurger.Orders.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +23,8 @@ namespace GeekBurger.Orders
 
             services.AddDbContext<OrdersContext>(x => x.UseInMemoryDatabase("geekburger-orders"));
             services.AddScoped<IOrdersRepository, OrdersRepository>();
+
+            services.AddAutoMapper();
 
             mvcCoreBuilder
                 .AddFormatterMappings()
