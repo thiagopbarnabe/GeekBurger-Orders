@@ -5,9 +5,8 @@ using System.Text;
 namespace GeekBurger.Orders.Contract
 {
     public class OrderChangedMessage
-    {
-        public Guid OrderId { get; set; }
-        public Guid StoreId { get; set; }
+    {   
+        public OrderToGet Order{ get; set; }
         public string State { get; set; }
     }
 }

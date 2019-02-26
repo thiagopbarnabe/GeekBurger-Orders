@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using GeekBurger.Orders.Model;
 using GeekBurger.Orders.Contract;
-using GeekBurger.Orders.Model;
 using GeekBurger.Orders.Repository;
 using Microsoft.Azure.Management.ServiceBus.Fluent;
 using Microsoft.Azure.ServiceBus;

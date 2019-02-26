@@ -10,12 +10,15 @@ namespace GeekBurger.Orders
         public AutomapperProfile()
         {
             CreateMap<OrderToUpsert, Order>();
-            CreateMap<Product, ProductToUpsert>();
+            CreateMap<Model.Product, ProductToUpsert>();
+            CreateMap<ProductToUpsert, Product>().ForAllOtherMembers(x => x.Ignore());
+            CreateMap<ProductionToUpsert, Production>();
             CreateMap<OrderToUpsert, Order>();
             CreateMap<PaymentToUpsert, Payment>();
-            //CreateMap<Item, ItemToGet>();
-            //CreateMap<EntityEntry<Product>, ProductChangedMessage>()
-            //.ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Entity));
+            CreateMap<EntityEntry<Order>, OrderChangedMessage>()
+            .ForMember(dest => dest.Order, opt => opt.MapFrom(src => src.Entity));
+
+
         }
     }
 }

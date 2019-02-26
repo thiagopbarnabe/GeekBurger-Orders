@@ -24,7 +24,7 @@ namespace GeekBurger.Orders.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost()]
+        [HttpPost]
         public IActionResult CreateOrder([FromBody] OrderToUpsert orderToAdd)
         {
             if (orderToAdd == null)
