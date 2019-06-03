@@ -35,8 +35,8 @@ namespace GeekBurger.Orders
             services.AddDbContext<OrdersContext>(x => x.UseInMemoryDatabase("geekburger-orders"));
             services.AddScoped<IOrdersRepository, OrdersRepository>();
             
-            services.AddSingleton<IOrderChangedService, OrderChangedService>();
-            services.AddSingleton<ILogService, LogService>();
+            //services.AddSingleton<IOrderChangedService, OrderChangedService>();
+            //services.AddSingleton<ILogService, LogService>();
 
             services.AddAutoMapper();
 
@@ -61,7 +61,7 @@ namespace GeekBurger.Orders
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json",
-               "Products");
+               "Orders");
             });
         }
     }

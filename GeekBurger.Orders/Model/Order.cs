@@ -11,7 +11,6 @@ namespace GeekBurger.Orders.Model
         [Key]
         public Guid OrderId { get; set; }
         public Guid StoreId { get; set; }
-        public ICollection<Product> Products { get; set; }
-        public ICollection<Production> Productions { get; set; }
+        public Decimal Total { get; set; }
     }
 }

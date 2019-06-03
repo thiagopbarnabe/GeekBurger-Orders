@@ -38,7 +38,7 @@ namespace GeekBurger.Orders.Controllers
             _ordersRepository.Save();
 
             var orderToGet = _mapper.Map<OrderToGet>(order);
-            return CreatedAtRoute("Order", new { OrderId = orderToGet.OrderId }, orderToGet);
+            return CreatedAtRoute(new { OrderId = orderToGet.OrderId }, orderToGet);
         }
 
         [HttpGet()]

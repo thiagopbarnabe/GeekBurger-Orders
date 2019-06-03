@@ -1,5 +1,6 @@
 ﻿using GeekBurger.Orders.Model;
 using GeekBurger.Orders.Service;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace GeekBurger.Orders.Repository
     {
         private OrdersContext _context;
         private IOrderChangedService _orderChangedService;
-        public OrdersRepository(OrdersContext context, IOrderChangedService orderChangedService)
+        public OrdersRepository(OrdersContext context)/*, IOrderChangedService orderChangedService)*/
         {
-            _orderChangedService = orderChangedService;
+            //_orderChangedService = orderChangedService;
             _context = context;
         }
 
@@ -36,11 +37,11 @@ namespace GeekBurger.Orders.Repository
 
         public void Save()
         {
-            _orderChangedService.AddToMessageList(_context.ChangeTracker.Entries<Order>());
+            //_orderChangedService.AddToMessageList(_context.ChangeTracker.Entries<Order>());
 
             _context.SaveChanges();
 
-            _orderChangedService.SendMessagesAsync();
+            //_orderChangedService.SendMessagesAsync();
         }
 
         public bool Update(Order order)

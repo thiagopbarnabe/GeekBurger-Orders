@@ -11,8 +11,5 @@ namespace GeekBurger.Orders.Repository
     {
         public OrdersContext(DbContextOptions<OrdersContext> options) : base(options) { }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Production> Productions { get; set; }
-
     }
 }

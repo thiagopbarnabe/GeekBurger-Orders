@@ -1,0 +1,95 @@
+Ola Pessoal,
+
+Favor submeter o case finalizado através de um zip contendo todos os arquivos da solução (.sln + .csproj + classes + arquivos de configuração) do projeto. Não é necessário anexar a pasta bin. 
+Verifique antes de submeter que o projeto está compilando extraindo-o em outra pasta, pois podem faltar arquivos na hora de montar o pacote.
+
+Favor submeter um zip por grupo. Peço que acrescentem também um arquivo texto com um readme contendo o nome dos integrantes. O conteúdo comitado no github não será considerado para avaliação, somente o zip que será anexado neste trabalho.
+
+
+Abraços
+Daniel Makiyama
+
+
+//NewOrder message 
+{ "OrderId": 1111, 
+  "StoreId": 1111, 
+  "Total": "10.20", 
+  "Products": [{ "ProductId": 1111}] 
+  "ProductionIds": [1111,1112] } 
+  
+//OrderChanged message 
+{ "OrderId": 1, 
+  "StoreId": 1111, 
+  "State": "Paid|Canceled|Finished" } 
+
+ 
+//POST api/order request 
+{ "OrderId": 1111, 
+  "StoreId": 1111, 
+  "Products": [{ "ProductId": 1111, "Price": 
+"10.20"  }] 
+  "ProductionIds": [1111,1112] } 
+ 
+//POST api/order response 
+{ "OrderId": 1111, 
+  "StoreId": 1111, 
+  "Total": "10.20" }  
+ 
+//POST api/pay request 
+{ "OrderId": 1111, 
+  "StoreId" : 1111, 
+  "PayType" : "credit", 
+  "CardNumber": "XXXXXXXXXX", 
+  "CardOwnerName": "XXXXXXXXXX", 
+  "SecurityCode": "XXX", 
+  "ExpirationDate": "05/10/2022", 
+  "RequesterId": 1111 } 
+ 
+//POST api/pay response 
+{}
+
+
+
+
+
+
+Ola Thiago,
+
+O trabalho substitutivo proposto consiste na correção dos pontos apontados abaixo relacionados ao projeto já entregue de ordens (em anexo). O objetivo é fazer a correção e entregar o projeto finalizado segundo o descrito nas atividades Atividade 1 - Microservicos, Atividade 2 - Service Bus e Atividade 3 - Api Management da disciplina.
+
+Problemas encontrados:
+
+- Está faltando o envio da mensagem de OrderChanged quando o produto é pago.
+
+- Não encontrei nenhuma implementação adicional de resiliência. Deve haver ao menos um mecanismo de resiliência em uma chamada HTTP utilizando Polly ( ex: https://github.com/makiyamad/GeekBurger-Html/blob/master/GeekBurger-HTML/Controllers/HtmlController.cs#L106 )
+- A variável state não é preenchida em nenhum momento, nem nas APIs nem na lógica interna.
+- Automapper gerou unhandled exception devido a existência de membros não mapeados. O código não foi testado neste ponto e a exception não foi tratada propriamente e o stack trace é retornado na API.
+- Não tem código para subscrever-se no tópico de neworder e receber a mensagem.
+- Está faltando a persistência do estado de pago no banco in memory (pode ser SQLite também se preferir).
+
+- O nome do tópico está ProductChanged quando deveria ser OrderChanged.
+
+Abraços,
+Daniel Makiyama
+
+
+{
+  "orderId": "b0a35b92837841e8be39666e03c51f20",
+  "storeId": "341eb35a18bf4135bd7642c8bdd58791",
+  "products": [
+    {
+      "productId": "df5a07383f194ae8b41fe51af01831ca",
+      "price": 10
+    },
+    {
+      "productId": "1a79c68ab9b74038a2cddfb990dc020e",
+      "price": 15
+    }
+  ],
+  "productions": [
+    "bd6e99c49f4a4ee19f9f4250335550d7"
+  ]
+}
+
+
+

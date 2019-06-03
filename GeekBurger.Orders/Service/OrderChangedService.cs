@@ -19,7 +19,7 @@ namespace GeekBurger.Orders.Service
 {
     public class OrderChangedService : IOrderChangedService
     {
-        private const string Topic = "ProductChanged";
+        private const string Topic = "OrderChanged";
         private IConfiguration _configuration;
         private IMapper _mapper;
         private List<Message> _messages;
@@ -65,7 +65,7 @@ namespace GeekBurger.Orders.Service
             {
                 Body = orderChangedByteArray,
                 MessageId = Guid.NewGuid().ToString(),
-                Label = orderChanged.StoreId.ToString()
+                Label = orderChanged.Order.OrderId.ToString()
             };
         }
 
@@ -77,7 +77,7 @@ namespace GeekBurger.Orders.Service
             var config = _configuration.GetSection("serviceBus").Get<ServiceBusConfiguration>();
             var topicClient = new TopicClient(config.ConnectionString, Topic);
 
-            _logService.SendMessagesAsync("Product was changed");
+            _logService.SendMessagesAsync("Order was changed");
 
             _lastTask = SendAsync(topicClient);
 

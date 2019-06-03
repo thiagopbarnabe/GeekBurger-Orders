@@ -11,9 +11,6 @@ namespace GeekBurger.Orders.Extensions
         public static void Seed(this OrdersContext context)
         {
             context.Orders.RemoveRange(context.Orders);
-            context.Productions.RemoveRange(context.Productions);
-            context.Products.RemoveRange(context.Products);
-
             context.SaveChanges();
         }
     }
