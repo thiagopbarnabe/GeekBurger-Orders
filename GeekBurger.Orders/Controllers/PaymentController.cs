@@ -15,20 +15,18 @@ using GeekBurger.Orders.Helper;
 using GeekBurger.Orders.Model;
 using GeekBurger.Orders.Repository;
 using Microsoft.AspNetCore.Mvc;
+using GeekBurger.Orders.Service;
 
 namespace GeekBurger.Orders.Controllers
 {
     [Route("api/pay")]
     public class PaymentController : Controller
-    {
+    {   
+        private IPaymentService _paymentService;
 
-        private IOrdersRepository _ordersRepository;
-        private IMapper _mapper;
-
-        public PaymentController(IOrdersRepository ordersRepository, IMapper mapper)
-        {
-            _ordersRepository = ordersRepository;
-            _mapper = mapper;
+        public PaymentController(IPaymentService paymentService)
+        {   
+            _paymentService = paymentService;
         }
 
         [HttpPost()]
@@ -37,15 +35,9 @@ namespace GeekBurger.Orders.Controllers
             if (paymentToAdd == null)
                 return BadRequest();
 
-            var payment = _mapper.Map<Payment>(paymentToAdd);
-            if (payment.StoreId == Guid.Empty)
-                return new UnprocessableEntityResult(ModelState);
-
-            _ordersRepository.Add(payment);
-            _ordersRepository.Save();
-
-            var orderToGet = _mapper.Map<OrderToGet>(payment);
-            return CreatedAtRoute(new { OrderId = orderToGet.OrderId }, orderToGet);
+            _paymentService.Pay(paymentToAdd);
+            
+            return Ok();
         }
     }
 }

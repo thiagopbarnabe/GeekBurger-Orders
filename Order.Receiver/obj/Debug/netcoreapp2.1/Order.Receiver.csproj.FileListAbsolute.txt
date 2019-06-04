@@ -1,0 +1,15 @@
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\Order.Receiver.deps.json
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\Order.Receiver.runtimeconfig.json
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\Order.Receiver.runtimeconfig.dev.json
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\Order.Receiver.dll
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\Order.Receiver.pdb
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\GeekBurger.Orders.Contract.dll
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\GeekBurger.Orders.Contract.pdb
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.csprojAssemblyReference.cache
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.csproj.CoreCompileInputs.cache
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.AssemblyInfoInputs.cache
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.AssemblyInfo.cs
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.csproj.CopyComplete
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.dll
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\obj\Debug\netcoreapp2.1\Order.Receiver.pdb
+C:\Users\thiag\source\GeekBurger-Orders\Order.Receiver\bin\Debug\netcoreapp2.1\appsettings.json

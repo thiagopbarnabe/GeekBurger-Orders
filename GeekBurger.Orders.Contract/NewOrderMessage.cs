@@ -10,5 +10,6 @@ namespace GeekBurger.Orders.Contract
         public Guid StoreId { get; set; }
         public Decimal Total { get; set; }
         public Guid[] ProductionIds { get; set; }
+        public ProductToUpsert[] Products { get; set; }
     }
 }

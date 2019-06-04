@@ -12,15 +12,14 @@ namespace GeekBurger.Orders.Repository
     {
         private OrdersContext _context;
         private IOrderChangedService _orderChangedService;
-        public OrdersRepository(OrdersContext context)/*, IOrderChangedService orderChangedService)*/
+        public OrdersRepository(OrdersContext context, IOrderChangedService orderChangedService)
         {
-            //_orderChangedService = orderChangedService;
+            _orderChangedService = orderChangedService;
             _context = context;
         }
 
         public bool Add(Order order)
-        {
-            order.OrderId = new Guid();
+        {   
             _context.Add(order);
             return true;
         }
@@ -37,16 +36,17 @@ namespace GeekBurger.Orders.Repository
 
         public void Save()
         {
-            //_orderChangedService.AddToMessageList(_context.ChangeTracker.Entries<Order>());
+            _orderChangedService.AddToMessageList(_context.ChangeTracker.Entries<Order>());
 
             _context.SaveChanges();
 
-            //_orderChangedService.SendMessagesAsync();
+            _orderChangedService.SendMessagesAsync();
         }
 
         public bool Update(Order order)
         {
             throw new NotImplementedException();
         }
+
     }
 }
